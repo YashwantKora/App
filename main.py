@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
-from tkinter import messagebox #<--not in use
+from tkinter import messagebox #<--not in use for now :(
 from datetime import date
 
 #Age Calculator
@@ -55,10 +55,17 @@ def Age_Calculator():
 
 #To Do List
 
-def To_do_list():
-    TODO = tk.Toplevel()
-    TODO.title('Days Since')
-    TODO.geometry('1080x720')
+def to_do_list():
+    to_do_list = tk.Toplevel()
+    to_do_list.title('To Do List')
+    to_do_list.geometry('1080x720')
+
+    mainframe4 = tk.Frame(to_do_list, bg = 'black')
+    mainframe4.pack(fill='both', expand=True)
+
+    lbl_1 = ttk.Label(mainframe4, text = "To Do List", background='black', foreground='white', font=('New Times Roman', 40, 'bold'))
+    lbl_1.grid(row=0, column=0, sticky='W', pady=10)
+    lbl_1.place(x = 540, y = 30, anchor = 'center')
 
 #Time Since 
 
@@ -121,10 +128,13 @@ def Time_since_window():
 def temperature_window():
     temperature_window = tk.Toplevel()
     temperature_window.title('Temperature Converter')
-    temperature_window.geometry('800x600')
+    temperature_window.geometry('310x400')
    
     mainframe2 = tk.Frame(temperature_window, bg='black')
     mainframe2.pack(fill='both', expand=True)
+
+    lbl_1 = ttk.Label(mainframe2, text = "To Do List", background='black', foreground='white', font=('New Times Roman', 40, 'bold'))
+    lbl_1.grid(row=0, column=0, sticky='W', pady=10)
     
     def f_to_c():
         fahrenheit = float(text_box1.get())
@@ -136,26 +146,26 @@ def temperature_window():
         fahrenheit = celsius * 9/5 + 32
         result_label.config(text=f"{fahrenheit:.2f}°C")
 #F to C:
-    label1 = ttk.Label(mainframe2, text="Enter a farhenheit value:", background='black', foreground='white', font=('poppins', 30))
-    label1.grid(row=0, column=0, sticky='W')
+    label1 = ttk.Label(mainframe2, text="Enter a farhenheit value:", background='black', foreground='white', font=('poppins', 20))
+    label1.grid(row=1, column=0, sticky='W')
 
     text_box1 = ttk.Entry(mainframe2)
-    text_box1.grid(row=2, column=0, pady = 10)
+    text_box1.grid(row=3, column=0, pady = 10)
 
     button3 = ttk.Button(mainframe2, text="Convert To Celsius", command= f_to_c)
-    button3.grid(row=3, column=0, pady = 10)
+    button3.grid(row=4, column=0, pady = 10)
 # C to F:                                           nice hack lol v
-    label2 = ttk.Label(mainframe2, text="Enter a celsius value:      " ,background='black', foreground='white', font=('poppins', 30))
-    label2.grid(row=4, column=0)
+    label2 = ttk.Label(mainframe2, text="Enter a celsius value:      " ,background='black', foreground='white', font=('poppins', 20))
+    label2.grid(row=5, column=0)
 
     text_box2 = ttk.Entry(mainframe2)
-    text_box2.grid(row=5,column=0, pady=10)
+    text_box2.grid(row=6,column=0, pady=10)
 
     button4 = ttk.Button(mainframe2, text="Convert To Farhenheit", command=c_to_f)
-    button4.grid(row=6, column=0, pady=10) 
+    button4.grid(row=7, column=0, pady=10) 
 
     result_label = ttk.Label(mainframe2, text="...", background='black', foreground='white', font=('poppins', 25) )
-    result_label.grid(row=7, column=0, pady= 20, padx= 20) 
+    result_label.grid(row=8, column=0, pady= 20, padx= 20) 
 
 #Main Menu
 
@@ -167,7 +177,7 @@ mainframe = tk.Frame(window, bg='black',)
 mainframe.pack(fill='both', expand=True)
 
 
-label = tk.Label(mainframe, text="Main Menu", foreground='white', background='black', font=('poppins', 30))
+label = tk.Label(mainframe, text="Main Menu", foreground='white', background='black', font=('New Times Roman', 30, 'bold'))
 label.grid(row=0, column=1)
 
 button1 = ttk.Button(mainframe, text="Temperature Converter", command=temperature_window)
@@ -176,7 +186,7 @@ button1.grid(row=1, column=0, pady=20, padx=40)
 bt1_label = ttk.Label(mainframe, text="- Converts Fahrenheit to Celsius and vice versa!", background='black', foreground='white', font=('poppins', 15))
 bt1_label.grid(row=1, column=1)
 #                                       lol v
-button2 = ttk.Button(mainframe, text="           To Do List           ", command=To_do_list)
+button2 = ttk.Button(mainframe, text="           To Do List           ", command=to_do_list)
 button2.grid(row=2, column=0, pady = 20)
 #                                                           bruh!! v 
 bt2_label = ttk.Label(mainframe, text="- Create and organize your tasks", background='black', foreground='white', font=('poppins', 15))
@@ -195,4 +205,3 @@ bt4_label = ttk.Label(mainframe, text="- Calculates your age!", background='blac
 bt4_label.grid(row=4, column=1)
 
 window.mainloop()
-
