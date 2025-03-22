@@ -1,5 +1,5 @@
 # App
-Just a simple personal app
+**Just a simple personal app**
 
 Done :
 1. Temperature Converter
