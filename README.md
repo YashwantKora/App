@@ -8,5 +8,5 @@ Done :
 Under Work :
 1. Age Calculator
 
-To D0 : 
+To do : 
 1. To Do List(kinda ironic ik :P)
