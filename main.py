@@ -72,17 +72,19 @@ def to_do_list():
 def Time_since_window():
     time_since_window = tk.Toplevel()
     time_since_window.title('Days Since')
-    time_since_window.geometry('1080x720')
+    time_since_window.geometry('700x720')
 
     def Calculate():
         current_year = int(txt_box_3.get())
         current_month = int(txt_box_2.get())
         current_day = int(txt_box_1.get())
-        preset_date = date(2025,3,23)
+
+        preset_date = date(2025,3,31)
         current_date = date(current_year, current_month, current_day)
-        difference = current_date - preset_date
+        
+        difference = abs(current_date - preset_date)
         day = abs(difference)
-        lbl_8.config(text=f"{day}") if current_date == current_date or current_date == (2024,9,16) else lbl_8.config(text=f"{day}s")
+        lbl_8.config(text=f"{difference.days}") if current_date == current_date or current_date == (2024,9,16) else lbl_8.config(text=f"{day.days}")
 
     mainframe3 = tk.Frame(time_since_window, bg='black')
     mainframe3.pack(fill='both', expand=True)
@@ -120,8 +122,12 @@ def Time_since_window():
     lbl_7 = ttk.Label(mainframe3, text="It's Been: ", background='black', foreground='white', font=('poppins', 20))
     lbl_7.grid(row=6, column=0, sticky='W')
 
-    lbl_8 = ttk.Label(mainframe3, text="...", background='black', foreground='white', font=('poppins', 30))
+    lbl_8 = ttk.Label(mainframe3, text="...", background='black', foreground='white', font=('poppins', 70))
     lbl_8.grid(row=7, column=1)
+
+    lbl_9 = ttk.Label(mainframe3, text="🔥", background='black', foreground='white', font=('poppins', 70))
+    lbl_9.grid(row=8, column=1)
+
 
 #Temperature Converter
 
