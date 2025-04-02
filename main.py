@@ -79,12 +79,22 @@ def Time_since_window():
         current_month = int(txt_box_2.get())
         current_day = int(txt_box_1.get())
 
-        preset_date = date(2025,3,31)
+        preset_date = date(2025,4,1)
         current_date = date(current_year, current_month, current_day)
         
         difference = abs(current_date - preset_date)
         day = abs(difference)
         lbl_8.config(text=f"{difference.days}") if current_date == current_date or current_date == (2024,9,16) else lbl_8.config(text=f"{day.days}")
+
+        weeks_completed = day.days // 7 
+
+        if weeks_completed >= 1:
+            lbl_10.config(text=f"Week {weeks_completed} Completed")
+        else:
+            lbl_10.config(text="Keep it up!")
+
+        
+
 
     mainframe3 = tk.Frame(time_since_window, bg='black')
     mainframe3.pack(fill='both', expand=True)
@@ -127,6 +137,9 @@ def Time_since_window():
 
     lbl_9 = ttk.Label(mainframe3, text="🔥", background='black', foreground='white', font=('poppins', 70))
     lbl_9.grid(row=8, column=1)
+
+    lbl_10 = ttk.Label(mainframe3, text="...", background='black', foreground='white', font=('poppins', 20))
+    lbl_10.grid(row=9, column=1)
 
 
 #Temperature Converter
