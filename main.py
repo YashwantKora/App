@@ -79,7 +79,7 @@ def Time_since_window():
         current_month = int(txt_box_2.get())
         current_day = int(txt_box_1.get())
 
-        preset_date = date(2025,4,1)
+        preset_date = date(2025,4,3)
         current_date = date(current_year, current_month, current_day)
         
         difference = abs(current_date - preset_date)
