@@ -79,7 +79,7 @@ def Time_since_window():
         current_month = int(txt_box_2.get())
         current_day = int(txt_box_1.get())
 
-        preset_date = date(2025,5,13)
+        preset_date = date(2025,5,18)
         current_date = date(current_year, current_month, current_day)
         
         difference = abs(current_date - preset_date)
@@ -126,7 +126,7 @@ def Time_since_window():
     lbl_5 = ttk.Label(mainframe3, text="Preset Date: ", background='black', foreground='white', font=('poppins', 20))
     lbl_5.grid(row=3, column=0, pady=20,sticky="W")
 
-    lbl_6 = ttk.Label(mainframe3, text="13-05-2025", background='black', foreground='white', font=('poppins', 30))
+    lbl_6 = ttk.Label(mainframe3, text="18-05-2025", background='black', foreground='white', font=('poppins', 30))
     lbl_6.grid(row=4, column=1)
 
     lbl_7 = ttk.Label(mainframe3, text="It's Been: ", background='black', foreground='white', font=('poppins', 20))
@@ -140,6 +140,9 @@ def Time_since_window():
 
     lbl_10 = ttk.Label(mainframe3, text="...", background='black', foreground='white', font=('poppins', 20))
     lbl_10.grid(row=9, column=1)
+
+    lbl_11 = ttk.Label(mainframe3, text="Just listen to: Hurry Up Tomorrow", background='black', foreground='white', font=('poppins', 10))
+    lbl_11.grid(row=10, column=1)
 
 
 #Temperature Converter
